@@ -1,5 +1,5 @@
 stubrunner:
   stubsMode: REMOTE
-  repositoryRoot: http://52.82.64.147:8081/nexus/content/repositories/snapshots
+  repositoryRoot: ${MAVEN_REPO}
   ids:
   - capbility.thoughtworks.com:goods:+:12306
