@@ -1,5 +1,6 @@
-stubrunner:
-  stubsMode: REMOTE
-  repositoryRoot: ${MAVEN_REPO}
-  ids:
-  - capbility.thoughtworks.com:goods:+:12306
+wiremock:
+  server:
+    files:
+    stubs:
+    - file:build/stubs/**/mappings/**/*.json
+    port: 6565

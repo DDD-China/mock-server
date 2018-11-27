@@ -1,0 +1,3 @@
+[submodule "api/products"]
+	path = api/products
+	url = https://github.com/linwenjun/DDD-summit-product-service-contract.git

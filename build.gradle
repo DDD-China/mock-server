@@ -1,6 +1,7 @@
 buildscript {
 	ext {
 		springBootVersion = '2.1.0.RELEASE'
+		springCloudContractVersion = '2.0.1.RELEASE'
 	}
 	repositories {
 		maven {url 'http://maven.aliyun.com/nexus/content/groups/public/'}
@@ -8,6 +9,7 @@ buildscript {
 	}
 	dependencies {
 		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+		classpath "org.springframework.cloud:spring-cloud-contract-gradle-plugin:${springCloudContractVersion}"
 	}
 }
 
@@ -15,6 +17,7 @@ apply plugin: 'java'
 apply plugin: 'eclipse'
 apply plugin: 'org.springframework.boot'
 apply plugin: 'io.spring.dependency-management'
+apply plugin: 'spring-cloud-contract'
 
 group = 'capbility.thoughtworks.com'
 version = '0.0.1-SNAPSHOT'
@@ -42,3 +45,9 @@ dependencyManagement {
 		mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
 	}
 }
+
+contracts {
+	contractsDslDir = project.file("api")
+}
+
+bootRun.dependsOn generateClientStubs
