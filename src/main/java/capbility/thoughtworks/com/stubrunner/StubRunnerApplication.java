@@ -7,7 +7,6 @@ import org.springframework.cloud.contract.wiremock.AutoConfigureWireMock;
 
 @SpringBootApplication
 @AutoConfigureWireMock
-@AutoConfigureStubRunner
 public class StubRunnerApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(StubRunnerApplication.class, args);
